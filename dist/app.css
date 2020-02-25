@@ -81,6 +81,7 @@ main .albums .album {
 
 main .albums .album .poster {
   width: 100%;
+  height: 100%;
 }
 
 main .albums .album .title {
