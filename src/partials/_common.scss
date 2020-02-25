@@ -1,0 +1,36 @@
+// common
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	min-width: 320px;
+	font-family: sans-serif;
+	font-size: $textFontSize;
+	color: $textColor;
+}
+
+a {
+	color: $textColor;
+	text-decoration: none;
+}
+
+.container {
+	max-width: 1200px;
+	width: 90%;
+	margin: auto;
+}
+
+.container-fluid {
+	width: 100%;
+}
+
+.flex-start {
+	justify-content: flex-start;
+}
+
+.flex-end {
+	justify-content: flex-end;
+}
