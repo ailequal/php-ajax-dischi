@@ -1,1 +1,14 @@
 // footer
+footer {
+	background-color: $blackColor;
+	.info {
+		height: $infoHeight;
+		padding: 5px 0;
+		@include flex-init;
+		.copyright {
+			text-align: right;
+			font-size: 14px;
+			color: $textColor;
+		}
+	}
+}

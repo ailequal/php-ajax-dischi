@@ -43,28 +43,39 @@ header {
 }
 
 header .nav-bar {
-  padding: 15px 0;
+  height: 70px;
+  display: flex;
+  align-items: center;
 }
 
-header .nav-bar .logo img {
-  width: 40px;
-  height: 40px;
+header .nav-bar ul .logo a {
+  display: inline-block;
+}
+
+header .nav-bar ul .logo a img {
+  width: 35px;
+  height: 35px;
 }
 
 main {
+  height: calc(100vh - 70px - 40px);
+  overflow-y: scroll;
   background-color: #333c47;
 }
 
 main .albums {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   padding: 30px 0;
 }
 
 main .albums .album {
-  max-width: 200px;
-  width: 100%;
+  width: calc((100% / 6) - 20px);
   background-color: #232323;
+  margin: 10px;
   border-radius: 10px;
-  padding: 15px 10px 20px 15px;
+  padding: 15px 10px 20px 10px;
   text-align: center;
 }
 
@@ -74,15 +85,56 @@ main .albums .album .poster {
 
 main .albums .album .title {
   margin: 10px 0;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 main .albums .album .author {
   margin: 5px 0;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 main .albums .album .year {
+  font-size: 12px;
+}
+
+footer {
+  background-color: #232323;
+}
+
+footer .info {
+  height: 40px;
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+}
+
+footer .info .copyright {
+  text-align: right;
   font-size: 14px;
+  color: #edefed;
+}
+
+@media screen and (max-width: 992px) {
+  main .albums .album {
+    width: calc((100% / 5) - 20px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main .albums .album {
+    width: calc((100% / 4) - 20px);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  main .albums .album {
+    width: calc((100% / 3) - 20px);
+  }
+}
+
+@media screen and (max-width: 420px) {
+  main .albums .album {
+    width: calc((100% / 2) - 20px);
+  }
 }
 

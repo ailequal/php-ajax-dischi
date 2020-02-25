@@ -2,10 +2,18 @@
 header {
 	background-color: $blackColor;
 	.nav-bar {
-		padding: 15px 0;
-		.logo img {
-			width: 40px;
-			height: 40px;
+		height: $navBarHeight;
+		@include flex-init;
+		ul {
+			.logo {
+				a {
+					display: inline-block;
+					img {
+						width: 35px;
+						height: 35px;
+					}
+				}
+			}
 		}
 	}
 }
