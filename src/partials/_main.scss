@@ -1,1 +1,29 @@
 // main
+main {
+	background-color: $greyColor;
+	.albums {
+		padding: 30px 0;
+		.album {
+			max-width: 200px;
+			width: 100%;
+			background-color: $blackColor;
+			border-radius: 10px;
+			padding: 15px 10px 20px 15px;
+			text-align: center;
+			.poster {
+				width: 100%;
+			}
+			.title {
+				margin: 10px 0;
+				font-size: 18px;
+			}
+			.author {
+				margin: 5px 0;
+				font-size: 16px;
+			}
+			.year {
+				font-size: 14px;
+			}
+		}
+	}
+}
