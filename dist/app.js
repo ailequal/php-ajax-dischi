@@ -15820,16 +15820,17 @@ var Handlebars = __webpack_require__(/*! handlebars */ "./node_modules/handlebar
 
 
 $(document).ready(function () {
+  // ajax call for inserting all the albums
   $.ajax({
     url: "http://localhost:8888/php-ajax-dischi/server.php",
     method: "GET",
-    data: {// 'title': 'Plans',
+    data: {
+      'author': 'All'
     },
     success: function success(data, state) {
       for (var i = 0; i < data.length; i++) {
         var album = data[i];
-        var source = $('#template').html();
-        var template = Handlebars.compile(source);
+        var template = handlebarsInit('#template');
         var context = {
           title: album.title,
           author: album.author,
@@ -15843,8 +15844,50 @@ $(document).ready(function () {
     error: function error(request, state, _error) {
       console.log(_error);
     }
+  }); // store author option variable
+
+  var option = $('#author').val();
+  console.log(option); // when the author is changed the album are changed
+
+  $(document).on('change', '#author', function () {
+    // author option is updated
+    option = $(this).val();
+    console.log(option);
+    $.ajax({
+      url: "http://localhost:8888/php-ajax-dischi/server.php",
+      method: "GET",
+      data: {
+        'author': option
+      },
+      success: function success(data, state) {
+        $('.albums').text('');
+
+        for (var i = 0; i < data.length; i++) {
+          var album = data[i];
+          var template = handlebarsInit('#template');
+          var context = {
+            title: album.title,
+            author: album.author,
+            year: album.year,
+            path: album.poster
+          };
+          var html = template(context);
+          $('.albums').append(html);
+        }
+      },
+      error: function error(request, state, _error2) {
+        console.log(_error2);
+      }
+    });
   });
-});
+}); // function
+// handlebars init
+
+function handlebarsInit(template) {
+  var source = $(template).html();
+  var template = Handlebars.compile(source);
+  return template;
+}
 
 /***/ }),
 
