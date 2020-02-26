@@ -5,6 +5,8 @@ header {
 		height: $navBarHeight;
 		@include flex-init;
 		ul {
+			@include flex-init;
+			justify-content: space-between;
 			.logo {
 				a {
 					display: inline-block;

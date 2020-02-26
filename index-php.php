@@ -1,3 +1,8 @@
+<?php
+	include './database.php';
+	// var_dump($database);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,24 +21,29 @@
 					<li class="logo">
 						<a href="#"><img src="./img/logo.svg" alt="logo.svg"></a>
 					</li>
+					<li>
+						<span>index-php.php - PHP Version</span>
+					</li>
 				</ul>
 			</div>
 		</div>
 	</header>
 	<main>
 		<div class="albums container">
-			<div class="album">
-				<img class="poster" src="./img/plans.jpg" alt="plans.jpg">
-				<h2 class="title">Plans</h2>
-				<h3 class="author">Death Cab for Cutie</h3>
-				<span class="year">2008</span>
-			</div>
-			<div class="album">
-				<img class="poster" src="./img/plans.jpg" alt="plans.jpg">
-				<h2 class="title">Plans</h2>
-				<h3 class="author">Death Cab for Cutie</h3>
-				<span class="year">2008</span>
-			</div>
+			<?php foreach ($database as $album) { ?>
+				<?php
+					$poster = $album['poster'];
+					$title = $album['title'];
+					$author = $album['author'];
+					$year = $album['year'];
+				?>
+				<div class="album">
+					<img class="poster" src="<?php echo $poster ?>" alt="<?php echo $title ?>">
+					<h2 class="title"><?php echo $title ?></h2>
+					<h3 class="author"><?php echo $author ?></h3>
+					<span class="year"><?php echo $year ?></span>
+				</div>
+			<?php } ?>
 		</div>
 	</main>
 	<footer>
@@ -43,7 +53,6 @@
 			</div>
 		</div>
 	</footer>
-	<script src="./dist/app.js"></script>
 </body>
 
 </html>

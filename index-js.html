@@ -1,8 +1,3 @@
-<?php
-	include './database.php';
-	// var_dump($database);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,26 +16,21 @@
 					<li class="logo">
 						<a href="#"><img src="./img/logo.svg" alt="logo.svg"></a>
 					</li>
+					<li>
+						<span>index-js.html - JS Version</span>
+					</li>
 				</ul>
 			</div>
 		</div>
 	</header>
 	<main>
 		<div class="albums container">
-			<?php foreach ($database as $album) { ?>
-				<?php
-					$poster = $album['poster'];
-					$title = $album['title'];
-					$author = $album['author'];
-					$year = $album['year'];
-				?>
-				<div class="album">
-					<img class="poster" src="<?php echo $poster ?>" alt="<?php echo $title ?>">
-					<h2 class="title"><?php echo $title ?></h2>
-					<h3 class="author"><?php echo $author ?></h3>
-					<span class="year"><?php echo $year ?></span>
-				</div>
-			<?php } ?>
+			<div class="album">
+				<img class="poster" src="path" alt="poster">
+				<h2 class="title">title</h2>
+				<h3 class="author">author</h3>
+				<span class="year">year</span>
+			</div>
 		</div>
 	</main>
 	<footer>
