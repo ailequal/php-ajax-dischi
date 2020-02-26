@@ -25,12 +25,7 @@
 	</header>
 	<main>
 		<div class="albums container">
-			<div class="album">
-				<img class="poster" src="path" alt="poster">
-				<h2 class="title">title</h2>
-				<h3 class="author">author</h3>
-				<span class="year">year</span>
-			</div>
+			<!-- handlebars -->
 		</div>
 	</main>
 	<footer>
@@ -40,6 +35,14 @@
 			</div>
 		</div>
 	</footer>
+	<script id="template" type="text/x-handlebars-template">
+		<div class="album">
+			<img class="poster" src="{{path}}" alt="{{title}}">
+			<h2 class="title">{{title}}</h2>
+			<h3 class="author">{{author}}</h3>
+			<span class="year">{{year}}</span>
+		</div>
+	</script>
 	<script src="./dist/app.js"></script>
 </body>
 

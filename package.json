@@ -31,6 +31,7 @@
     "vue-template-compiler": "^2.6.11"
   },
   "dependencies": {
+    "handlebars": "^4.7.3",
     "jquery": "^3.4.1"
   }
 }
